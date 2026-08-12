@@ -1,90 +1,45 @@
 # BUS4005 Hospitality Prompt Library
 
-**Assessment:** BUS4005 Assessment 1 - Prompt Library and Consultancy Pitch  
-**Student:** Rudra Patel  
-**Business field:** Hospitality  
-**Organisation type:** Medium-sized restaurant chain  
-**Portfolio:** https://github.com/rudra72306/BUS4005-Hospitality-Prompt-Library  
-**Tested with:** ChatGPT using fictional restaurant scenarios  
-**Last updated:** 13 August 2026
+**Subject:** AI for Business  
+**Business field:** Hospitality - medium-sized restaurant chain  
+**Model tested on:** ChatGPT  
+**Portfolio purpose:** Demonstrate 10 tested and iterated prompts that support restaurant workflow automation while retaining human oversight.
 
-## Business problem
+## Business Context
+A medium-sized restaurant chain receives customer enquiries, booking requests, complaints, shift notes, stock information and incident records in different formats. Staff spend time manually extracting information, checking completeness, classifying issues, drafting responses and preparing reports. This prompt library standardises those repetitive tasks while keeping bookings, safety, compensation, purchasing and management decisions under human control.
 
-Restaurant staff handle customer enquiries, bookings, complaints, handovers, incidents, stock checks and management reporting through short, unstructured notes. This creates a risk of missing information, inconsistent wording, unsupported assumptions and unclear escalation.
+## Prompt Library
+| ID | Prompt | Workflow | Automation Potential | Risk |
+|---|---|---|---|---|
+| P01 | [Customer Enquiry Classification](01-customer-enquiries/P01-enquiry-classification.md) | Customer Enquiries | High | Medium |
+| P02 | [Opening Hours Response](01-customer-enquiries/P02-opening-hours-response.md) | Customer Enquiries | High | Medium |
+| P03 | [Booking Request Extraction](02-bookings/P03-booking-request-extraction.md) | Bookings | High | Medium |
+| P04 | [Booking Data Check](02-bookings/P04-booking-data-check.md) | Bookings | High | Medium |
+| P05 | [Complaint Triage](03-complaint-management/P05-complaint-triage.md) | Complaint Management | High | Medium |
+| P06 | [Complaint Response](03-complaint-management/P06-complaint-response.md) | Complaint Management | High | Medium |
+| P07 | [Shift Handover](04-shift-operations/P07-shift-handover.md) | Shift Operations | High | Medium |
+| P08 | [Stock Shortage Analysis](04-shift-operations/P08-stock-shortage-analysis.md) | Shift Operations | Medium | High |
+| P09 | [Workplace Incident Report](05-management-and-safety/P09-incident-report.md) | Management and Safety | Medium | High |
+| P10 | [Weekly Management Summary](05-management-and-safety/P10-weekly-management-summary.md) | Management and Safety | Medium | Medium |
 
-This library uses 10 prompts to turn supplied information into controlled drafts and structured records. AI supports repetitive language and organisation tasks; staff keep responsibility for live-system checks, approvals, safety, legal decisions and customer communication.
+## Workflow Structure
+1. [Customer Enquiries](01-customer-enquiries/README.md) - classify enquiries and draft approved opening-hours responses.
+2. [Bookings](02-bookings/README.md) - extract booking details and check record completeness.
+3. [Complaint Management](03-complaint-management/README.md) - triage complaints and draft controlled responses.
+4. [Shift Operations](04-shift-operations/README.md) - prepare handovers and analyse stock shortages.
+5. [Management and Safety](05-management-and-safety/README.md) - structure incident reports and weekly management summaries.
 
-## Library summary
+## Prompting Strategies Used
+- Role prompting to define the AI's restaurant function.
+- Grounding constraints such as "use only the information provided".
+- Fixed output structures for consistent operational records.
+- Controlled categories and decision rules for classification and validation.
+- Missing-information instructions to reduce hallucination.
+- Explicit restrictions on availability confirmation, compensation, blame, legal conclusions and autonomous ordering.
+- Human-review requirements for customer messages, bookings, stock actions, safety incidents and management decisions.
 
-| ID | Prompt | Workflow | Automation potential | Risk | Status |
-|---|---|---|---|---|---|
-| [P01](prompts/P01-enquiry-classification.md) | Customer enquiry classification | Customer enquiries | High | Medium | Tested |
-| [P02](prompts/P02-opening-hours-response.md) | Opening-hours enquiry response | Customer enquiries | High | Medium | Tested |
-| [P03](prompts/P03-booking-request-extraction.md) | Booking request extraction | Customer enquiries | Medium-High | High | Tested |
-| [P04](prompts/P04-complaint-classification.md) | Complaint classification and urgency | Complaint management | High | High | Tested |
-| [P05](prompts/P05-complaint-response.md) | Customer complaint response draft | Complaint management | Medium | High | Tested |
-| [P06](prompts/P06-serious-complaint-escalation.md) | Serious complaint escalation summary | Complaint management | Low-Medium | High | Tested |
-| [P07](prompts/P07-shift-handover.md) | Shift handover | Restaurant operations | Medium | High | Tested |
-| [P08](prompts/P08-incident-report.md) | Workplace incident report draft | Restaurant operations | Low-Medium | High | Tested |
-| [P09](prompts/P09-stock-shortage-analysis.md) | Stock shortage analysis | Restaurant operations | Medium | High | Tested |
-| [P10](prompts/P10-weekly-management-summary.md) | Weekly management summary | Restaurant operations | Medium | High | Tested |
+## Iteration and Test Evidence
+Every prompt file contains Version 1, the improved final v1.1 prompt, one example input, both ChatGPT outputs, identified issues, comparison, automation potential, risks, limitations, mitigation and a detailed audit log. All examples use fictional restaurant information.
 
-## Prompt chains
-
-1. **Customer enquiries:** P01 classifies the message; P02 drafts a routine opening-hours response; P03 extracts a booking request for staff verification.
-2. **Complaint management:** P04 classifies the complaint; P05 drafts a controlled response; P06 prepares an immediate escalation summary for a serious complaint.
-3. **Restaurant operations:** P07 prepares a shift handover; P08 structures incident notes; P09 analyses stock shortages; P10 prepares a weekly management summary.
-
-## Prompting strategies used
-
-- Role, action, context and evaluation criteria
-- "Use only the information provided" grounding constraint
-- Fixed headings, categories, urgency definitions and word limits
-- Missing-information fallbacks instead of guessing
-- Explicit exclusions for compensation, legal, medical and causal claims
-- Draft labels and mandatory human review
-- Prompt chaining between related workflow steps
-
-## Iterative evidence
-
-Each prompt has exactly two versions. Version 1 is a broad instruction. Version 2 adds business context, structure, constraints and governance controls. Each file includes both prompts, both test outputs, the issue found, the improvement and an audit log. The GitHub commit history also records the initial and improved versions.
-
-- [Complete iteration audit log](evaluations/ITERATION-AUDIT-LOG.md)
-- [Testing method](evaluations/TEST-METHOD.md)
-
-## Presentation materials
-
-- [Eight-slide consultancy pitch outline](presentation/SLIDE-OUTLINE.md)
-- [5-7 minute video script](presentation/VIDEO-SCRIPT.md)
-- [Submission checklist](SUBMISSION-CHECKLIST.md)
-- [AI acknowledgement draft](AI-ACKNOWLEDGEMENT.md)
-
-## Repository structure
-
-```text
-.
-├── README.md
-├── prompts/
-│   ├── P01-enquiry-classification.md
-│   ├── P02-opening-hours-response.md
-│   ├── P03-booking-request-extraction.md
-│   ├── P04-complaint-classification.md
-│   ├── P05-complaint-response.md
-│   ├── P06-serious-complaint-escalation.md
-│   ├── P07-shift-handover.md
-│   ├── P08-incident-report.md
-│   ├── P09-stock-shortage-analysis.md
-│   └── P10-weekly-management-summary.md
-├── evaluations/
-│   ├── ITERATION-AUDIT-LOG.md
-│   └── TEST-METHOD.md
-├── presentation/
-│   ├── SLIDE-OUTLINE.md
-│   └── VIDEO-SCRIPT.md
-├── AI-ACKNOWLEDGEMENT.md
-└── SUBMISSION-CHECKLIST.md
-```
-
-## Responsible-use position
-
-No prompt in this library authorises the AI to confirm a booking, send a customer message, order stock, determine incident or illness causation, offer compensation, assign blame or make legal or medical conclusions. Those actions remain with authorised staff.
+## Responsible Automation Boundary
+The AI may classify, extract, check completeness, organise notes and draft messages. It does not confirm bookings, send customer communications, approve refunds, order stock, determine incident cause, assign blame or replace manager review.
